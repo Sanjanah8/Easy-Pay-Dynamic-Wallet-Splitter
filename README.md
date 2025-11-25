@@ -14,15 +14,16 @@
 **Easy Pay** is a smart and dynamic **wallet splitting system** that helps users divide payments seamlessly across multiple participants. Whether it's bills, group purchases, or shared subscriptions, Easy Pay ensures a smooth and transparent transaction experience.
 
 ---
+<img width="1385" height="671" alt="image" src="https://github.com/user-attachments/assets/66a49c50-4425-4bef-9c0c-c8b5d000d1d4" />
+<img width="1388" height="902" alt="image" src="https://github.com/user-attachments/assets/ef2102f8-33e8-44a6-939b-78deb2f555ae" />
 
 ## 🚀 **Features**
 
-* 🔄 **Dynamic Bill Splitting** — Split any payment among users in real-time
-* 👥 **Multi-user Participation** — Add or remove participants instantly
-* 📊 **Smart Calculations** — Automatically computes each user’s share
-* 💸 **Multiple Payment Options** — Flexible payment modes (UPI, card, wallet, etc.)
-* 🔐 **Secure Transactions** — Ensures security, privacy, and transparency
-* 📱 **User-friendly Interface** — Simple, modern, and responsive design
+* **Dynamic Bill Splitting** — Split any payment among users in real-time
+* **SMS Wallet Top-up for Offline Users** — Users can top up wallet using SMS message like "TOP 100" 
+* **Multi-user Participation** — Add or remove participants instantly
+* **Smart Calculations** — Automatically computes each user’s share
+* **User-friendly Interface** — Simple, responsive design
 
 ---
 
