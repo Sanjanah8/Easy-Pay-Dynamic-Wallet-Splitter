@@ -9,9 +9,9 @@
 
 ---
 
-## 📌 **Overview**
+## **Overview**
 
-**Easy Pay** is a smart and dynamic **wallet splitting system** that helps users divide payments seamlessly across multiple participants. Whether it's bills, group purchases, or shared subscriptions, Easy Pay ensures a smooth and transparent transaction experience.
+**Easy Pay** is a smart and dynamic **wallet splitting system** that helps users divide payments seamlessly across multiple participants. Whether it's bills, group purchases or shared subscriptions, Easy Pay ensures a smooth and transparent experience.
 
 ---
 <img width="1385" height="671" alt="image" src="https://github.com/user-attachments/assets/66a49c50-4425-4bef-9c0c-c8b5d000d1d4" />
@@ -46,17 +46,19 @@
 
 ##  **Project Structure **
 
-```
 Easy Pay Dynamic Wallet Splitter/
- ├── static/
- │   ├── frontend/
- │   ├── backend/
- │   ├── utils/
- │   └── api/
- ├── assets/
- ├── README.md
- └── package.json
-```
+├── app.py
+├── static/
+│   ├── css/
+│   │   ├── intro.css
+│   │   └── style.css
+│   ├── js/
+│   │   └── app.js
+├── templates/
+│   ├── intro.html
+│   └── home.html
+├── README.md
+
 
 ---
 
