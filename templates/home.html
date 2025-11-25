@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Digital Expense Manager</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="icon">🌾</span>
+                <h1>EASY PAY(Dynamic Wallet Splitter)</h1>
+            </div>
+            <p class="tagline">Together in Every Transaction</p>
+        </header>
+
+        <div class="dashboard">
+            <!-- Create Group Section -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon"></span>
+                    <h2>Create Community Group</h2>
+                </div>
+                <div class="card-body">
+                    <form id="createGroupForm">
+                        <div class="form-group">
+                            <label for="groupName">Group Name</label>
+                            <input type="text" id="groupName" placeholder="e.g., Village Farmers Co-op" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="groupDesc">Description</label>
+                            <textarea id="groupDesc" placeholder="Brief description of your group" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Group</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Groups List -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="icon"></span>
+                    <h2>Your Groups</h2>
+                </div>
+                <div class="card-body">
+                    <div id="groupsList" class="groups-list">
+                        <p class="empty-state">No groups yet. Create one to get started!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Member Section -->
+            <div class="card" id="memberCard" style="display: none;">
+                <div class="card-header">
+                    <span class="icon"></span>
+                    <h2>Add Member</h2>
+                </div>
+                <div class="card-body">
+                    <form id="addMemberForm">
+                        <input type="hidden" id="selectedGroupId">
+                        <div class="form-group">
+                            <label for="memberName">Member Name</label>
+                            <input type="text" id="memberName" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="memberType">Member Type</label>
+                            <select id="memberType" required>
+                                <option value="single">Single Person</option>
+                                <option value="couple">Couple (2 people)</option>
+                                <option value="family">Family</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="familySizeGroup" style="display: none;">
+                            <label for="familySize">Family Size</label>
+                            <input type="number" id="familySize" min="1" value="4" placeholder="Number of members">
+                        </div>
+                        <div class="form-group">
+                            <label for="memberPhone">Phone Number</label>
+                            <input type="tel" id="memberPhone" placeholder="Optional">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Member</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Wallet Management -->
+<!-- Wallet Management -->
+<div class="card" id="walletCard" style="display: none;">
+    <div class="card-header">
+        <span class="icon"></span>
+        <h2>Wallet Management</h2>
+    </div>
+
+    <div class="card-body">
+
+        <div class="form-group">
+            <label for="memberSelect">Select Member</label>
+            <select id="memberSelect">
+                <option value="">Choose a member</option>
+            </select>
+        </div>
+
+        <div id="walletInfo" style="display: none;">
+
+            <div class="wallet-balance">
+                <h3>Current Balance</h3>
+                <p class="balance-amount">₹<span id="currentBalance">0</span></p>
+
+
+
+                <!-- ✅ SMS SIMULATOR -->
+                <div id="smsBox">
+                    <h3> SMS Wallet Top-up for Offline Users</h3>
+                    <input id="phone" placeholder="Sender number" style="width: 100%; margin-bottom: 8px;"><br>
+                    <input id="message" placeholder="Example: TOP 100" style="width: 100%; margin-bottom: 8px;"><br>
+                    <button onclick="sendSMS()" class="btn btn-primary">Send SMS</button>
+                    <div id="smsDisplay"></div>
+                </div>
+
+                <!-- Top-up Form -->
+                <form id="topupForm">
+                    <div class="form-group">
+                        <label for="topupAmount">Top-up Amount</label>
+                        <input type="number" id="topupAmount" min="1" placeholder="Enter amount" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topupDesc">Description</label>
+                        <input type="text" id="topupDesc" placeholder="Optional note">
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Add Funds</button>
+                </form>
+                
+            </div> <!-- wallet-balance end -->
+        </div> <!-- walletInfo end -->
+
+    </div> <!-- card-body end -->
+</div> <!-- walletCard end -->
+
+            <!-- Split Expense -->
+            <div class="card" id="splitCard" style="display: none;">
+                <div class="card-header">
+                    <span class="icon">🧮</span>
+                    <h2>Split Expense</h2>
+                </div>
+                <div class="card-body">
+                    <form id="splitForm">
+                        <div class="form-group">
+                            <label for="expenseAmount">Total Amount</label>
+                            <input type="number" id="expenseAmount" min="1" placeholder="Enter total expense" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expenseDesc">Description</label>
+                            <input type="text" id="expenseDesc" placeholder="What was purchased?" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="splitType">Split Method</label>
+                            <select id="splitType">
+                                <option value="equal">Equal Split</option>
+                                <option value="proportional">Proportional (by family size)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate & Split</button>
+                    </form>
+                    <div id="splitResults" class="split-results"></div>
+                </div>
+            </div>
+
+            <!-- Member Details -->
+            <div class="card" id="detailsCard" style="display: none;">
+                <div class="card-header">
+                    <span class="icon">📊</span>
+                    <h2>Group Overview</h2>
+                </div>
+                <div class="card-body">
+                    <div id="membersList" class="members-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>
