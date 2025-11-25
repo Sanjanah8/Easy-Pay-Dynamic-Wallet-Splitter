@@ -34,6 +34,9 @@
 * Event contributions & group gifting
 
 ---
+<img width="1026" height="473" alt="image" src="https://github.com/user-attachments/assets/16ff02e5-6aa1-44e0-b430-cf53d36e3f2f" />
+
+<img width="983" height="701" alt="image" src="https://github.com/user-attachments/assets/296e5272-03b4-48e5-a65b-1f96269579dc" />
 
 ## 🛠️ **Tech Stack**
 
