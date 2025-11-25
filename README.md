@@ -35,24 +35,20 @@
 * Event contributions & group gifting
 
 ---
-<img width="1026" height="473" alt="image" src="https://github.com/user-attachments/assets/16ff02e5-6aa1-44e0-b430-cf53d36e3f2f" />
-
-<img width="983" height="701" alt="image" src="https://github.com/user-attachments/assets/296e5272-03b4-48e5-a65b-1f96269579dc" />
 
 ## 🛠️ **Tech Stack**
 
 * **Frontend:** HTML, CSS, JavaScript
-* **Backend:** Node.js / Python (choose your stack)
-* **Database:** MongoDB / PostgreSQL
-* **API Integration:** UPI / Payment Gateway (Razorpay, Stripe, etc.)
+* **Backend:** Flask
+* **Database:** In memory DB
 
 ---
 
-## 📁 **Project Structure (Example)**
+##  **Project Structure **
 
 ```
-EasyPay/
- ├── src/
+Easy Pay Dynamic Wallet Splitter/
+ ├── static/
  │   ├── frontend/
  │   ├── backend/
  │   ├── utils/
@@ -64,49 +60,32 @@ EasyPay/
 
 ---
 
-## 🧪 **How to Run the Project**
+## **How to Run the Project**
 
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/yourusername/easy-pay.git
+   git clone https://github.com/yourusername/easy-pay-dynamic-wallet-splitter.git
    ```
 2. Navigate to project folder
 
    ```bash
-   cd easy-pay
+   cd easy-pay-dynamic-wallet-splitter
    ```
 3. Install dependencies
 
    ```bash
-   npm install
+   pip install flask
    ```
 4. Start the development server
 
    ```bash
-   npm start
+   python app.py
    ```
 
 ---
 
-## 🤝 **Contributing**
 
-Contributions are welcome!
-Feel free to fork the project, submit issues, or send pull requests.
-
----
-
-## 📜 **License**
-
-This project is licensed under the **MIT License**.
-
----
-
-## 🌟 **Acknowledgements**
-
-Thanks to all contributors, testers, and early users who helped shape **Easy Pay**.
-
----
 
 If you want, I can also create:
 ✅ A logo
