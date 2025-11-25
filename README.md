@@ -1,5 +1,5 @@
+<img width="1339" height="537" alt="image" src="https://github.com/user-attachments/assets/319340bf-22e9-4601-bc5b-61154c05e213" />
 
-<img width="1339" height="541" alt="image" src="https://github.com/user-attachments/assets/dbb08fc3-2ef9-43e3-8800-abe4090946f6" />
 
 # **EASY PAY**
 
