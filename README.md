@@ -89,6 +89,10 @@ Easy Pay Dynamic Wallet Splitter/
 
 ###  **Future Enhancements**
 
+* **AI/ML and OCR Integration**
+    
+  The idea is to reads SMS scans bills for easy splitting
+
 * **Multilingual SMS Input Support**
   
   Rural users often communicate in their **local languages** and not everyone is comfortable with English. Farmers need language support for trade.Easy Pay aims to support SMS commands in multiple Indian
@@ -107,9 +111,7 @@ Easy Pay Dynamic Wallet Splitter/
   * `"আমার ভাগ কত?"`
 
   The system aims to automatically detect the language and process the command.
-
-  * **AI/ML and OCR Integration**
-    The idea is to reads SMS scans bills for easy splitting
+    
 ---
 ###  **Conclusion**
 
