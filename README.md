@@ -17,7 +17,7 @@ Traditional split apps fail when:
 * One family has 4 members, one group has 2 members and one person is solo
 * Some people didn’t consume certain items (like alcohol)
 *  Rural users have limited internet or smartphone access
-*  
+  
 ## **Features**
 
 * **Dynamic Bill Splitting** — Split any payment among users in real-time
@@ -45,7 +45,7 @@ Traditional split apps fail when:
 * **Backend:** Flask
 * **Database:** In memory DB
 ---
-##  **Project Structure **
+##  **Project Structure**
 ```
 Easy Pay Dynamic Wallet Splitter/
 ├── app.py
@@ -90,6 +90,7 @@ Easy Pay Dynamic Wallet Splitter/
 ###  **Future Enhancements**
 
 * **Multilingual SMS Input Support**
+  
   Rural users often communicate in their **local languages** and not everyone is comfortable with English. Farmers need language support for trade.Easy Pay aims to support SMS commands in multiple Indian
   languages such as **Hindi, Tamil, Telugu** and more.
   This ensures:
@@ -107,5 +108,7 @@ Easy Pay Dynamic Wallet Splitter/
 
   The system aims to automatically detect the language and process the command.
 ---
+###  **Conclusion**
+
 Easy Pay aims to empower rural communities by making group finances simple, transparent and accessible even without the internet.A lightweight solution for everyday shared expenses.
 
