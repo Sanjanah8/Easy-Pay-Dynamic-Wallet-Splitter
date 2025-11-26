@@ -1,4 +1,3 @@
-// Global state
 let currentGroupId = null;
 let groups = [];
 let members = [];
@@ -11,23 +10,19 @@ async function sendSMS() {
         return;
     }
 
-    // Fake success message (NOT using backend return)
     const smsDiv = document.createElement("div");
     smsDiv.classList.add("sms-bubble");
     smsDiv.innerText = `Top-up successful: ₹${message}`;
     document.getElementById("smsDisplay").prepend(smsDiv);
 
-    // Clear input
     document.getElementById("message").value = "";
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     loadGroups();
     setupEventListeners();
 });
 
-// Event Listeners
 function setupEventListeners() {
     document.getElementById('createGroupForm').addEventListener('submit', handleCreateGroup);
     document.getElementById('addMemberForm').addEventListener('submit', handleAddMember);
@@ -37,7 +32,6 @@ function setupEventListeners() {
     document.getElementById('memberSelect').addEventListener('change', handleMemberSelect);
 }
 
-// Toast notification
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -48,7 +42,6 @@ function showToast(message, type = 'success') {
     }, 3000);
 }
 
-// Create Group
 async function handleCreateGroup(e) {
     e.preventDefault();
     
@@ -75,9 +68,8 @@ async function handleCreateGroup(e) {
     }
 }
 
-// Delete Group
 async function deleteGroup(groupId, event) {
-    event.stopPropagation(); // Prevent triggering selectGroup
+    event.stopPropagation();
     
     if (!confirm('Are you sure you want to delete this group? All members, wallets, and transactions will be permanently deleted.')) {
         return;
@@ -93,7 +85,6 @@ async function deleteGroup(groupId, event) {
         if (data.success) {
             showToast('Group deleted successfully!', 'success');
             
-            // If the deleted group was selected, hide all cards
             if (currentGroupId === groupId) {
                 currentGroupId = null;
                 document.getElementById('memberCard').style.display = 'none';
@@ -112,7 +103,6 @@ async function deleteGroup(groupId, event) {
     }
 }
 
-// Load Groups
 async function loadGroups() {
     try {
         const response = await fetch('/api/groups');
@@ -144,12 +134,11 @@ async function loadGroups() {
     }
 }
 
-// Select Group
 function selectGroup(groupId) {
     currentGroupId = groupId;
     document.getElementById('selectedGroupId').value = groupId;
     
-    // Show relevant cards
+
     document.getElementById('memberCard').style.display = 'block';
     document.getElementById('walletCard').style.display = 'block';
     document.getElementById('splitCard').style.display = 'block';
@@ -159,7 +148,6 @@ function selectGroup(groupId) {
     loadGroupDetails(groupId);
 }
 
-// Handle Member Type Change
 function handleMemberTypeChange(e) {
     const familySizeGroup = document.getElementById('familySizeGroup');
     const familySize = document.getElementById('familySize');
@@ -171,7 +159,7 @@ function handleMemberTypeChange(e) {
         familySizeGroup.style.display = 'none';
         familySize.required = false;
         
-        // Set default values
+     
         if (e.target.value === 'couple') {
             familySize.value = 2;
         } else {
@@ -180,7 +168,7 @@ function handleMemberTypeChange(e) {
     }
 }
 
-// Add Member
+
 async function handleAddMember(e) {
     e.preventDefault();
     
@@ -217,7 +205,7 @@ async function handleAddMember(e) {
     }
 }
 
-// Load Group Details
+
 async function loadGroupDetails(groupId) {
     try {
         const response = await fetch(`/api/groups/${groupId}/details`);
@@ -281,7 +269,6 @@ async function loadGroupDetails(groupId) {
     }
 }
 
-// Update Member Select
 async function updateMemberSelect() {
     if (!currentGroupId) return;
     
@@ -299,7 +286,6 @@ async function updateMemberSelect() {
     }
 }
 
-// Handle Member Select
 async function handleMemberSelect(e) {
     const memberId = e.target.value;
     const walletInfo = document.getElementById('walletInfo');
@@ -320,7 +306,6 @@ async function handleMemberSelect(e) {
     }
 }
 
-// Handle Topup
 async function handleTopup(e) {
     e.preventDefault();
     
@@ -349,7 +334,6 @@ async function handleTopup(e) {
     }
 }
 
-// Handle Split
 async function handleSplit(e) {
     e.preventDefault();
     
