@@ -1,8 +1,6 @@
 <img width="1339" height="537" alt="image" src="https://github.com/user-attachments/assets/319340bf-22e9-4601-bc5b-61154c05e213" />
 
-# **EASY PAY**
-
-## **Dynamic Wallet Splitter**
+# **EASY PAY(Dynamic Wallet Splitter)**
 
 ### *Together in Every Transaction*
 ---
@@ -12,16 +10,24 @@
 <img width="1385" height="671" alt="image" src="https://github.com/user-attachments/assets/66a49c50-4425-4bef-9c0c-c8b5d000d1d4" />
 <img width="1388" height="902" alt="image" src="https://github.com/user-attachments/assets/ef2102f8-33e8-44a6-939b-78deb2f555ae" />
 
-## 🚀 **Features**
+## Why Easy Pay?
+
+Traditional split apps fail when:
+
+* One family has 4 members, one group has 2 members and one person is solo
+* Some people didn’t consume certain items (like alcohol)
+*  Rural users have limited internet or smartphone access
+*  
+## **Features**
 
 * **Dynamic Bill Splitting** — Split any payment among users in real-time
 * **SMS Wallet Top-up for Offline Users** — Users can top up wallet using SMS message like "TOP 100"
-* **Works Without Internet**  Supports above mentioned SMS-based offline mode for villages with low or inconsistent network.
+* **Works Without Internet** — Supports above mentioned SMS-based offline mode for villages with low or inconsistent network.
 * **Multi-user Participation** — Add or remove participants instantly
-* **No Smartphone Needed** → Designed for button phone users to participate in group splitting through simple text messages.
-* **User-friendly Interface** → Simple interface, clear instructions and zero complexity  anyone can use it.
-* **Transparent Group Payments** → Prevents misunderstandings in shared expenses like festivals, farming supplies, travel, or village events.
-* **Supports Family-Based Splits**  Perfect for joint rural households where expenses are often shared by family groups rather than individuals.
+* **No Smartphone Needed** — Designed for button phone users to participate in group splitting through simple text messages.
+* **User-friendly Interface** — Simple interface, clear instructions and zero complexity  anyone can use it.
+* **Transparent Group Payments** — Prevents misunderstandings in shared expenses like festivals, farming supplies, travel, or village events.
+* **Supports Family Based Splits** — Perfect for joint rural households where expenses are often shared by family groups rather than individuals.
 
 ---
 
@@ -84,7 +90,8 @@ Easy Pay Dynamic Wallet Splitter/
 ###  **Future Enhancements**
 
 * **Multilingual SMS Input Support**
-  Rural users often communicate in their **local languages** and not everyone is comfortable with English. Farmers need language support for trade.Easy Pay aims to support SMS commands in multiple Indian languages such as **Hindi, Tamil, Telugu** and more.
+  Rural users often communicate in their **local languages** and not everyone is comfortable with English. Farmers need language support for trade.Easy Pay aims to support SMS commands in multiple Indian
+  languages such as **Hindi, Tamil, Telugu** and more.
   This ensures:
 
   * Higher adoption in rural areas
