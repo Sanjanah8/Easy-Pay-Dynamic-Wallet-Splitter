@@ -13,7 +13,7 @@ db = {
     'transactions': [],
     'ledger': {}
 }
-# --- Helper Functions ---
+
 
 def find_user_by_phone(phone):
     """Return member_id if phone number matches."""
@@ -28,7 +28,7 @@ def save_user(member_id, amount):
     wallet['balance'] += amount
     wallet['total_contributed'] += amount
     
-    # Create transaction log
+   
     transaction = {
         'id': str(uuid.uuid4())[:8],
         'member_id': member_id,
@@ -44,8 +44,6 @@ def send_sms(to, text):
     """Fake SMS sender for hackathon demo."""
     print(f"[SMS to {to}] {text}")
 
-
-# Routes
 @app.route("/")
 def intro():
     return render_template("intro.html")
@@ -74,10 +72,7 @@ def delete_group(group_id):
     if group_id not in db['groups']:
         return jsonify({'success': False, 'error': 'Group not found'}), 404
     
-    # Get all members in the group
     member_ids = db['groups'][group_id]['members']
-    
-    # Delete all members, wallets, and ledgers
     for member_id in member_ids:
         if member_id in db['members']:
             del db['members'][member_id]
@@ -86,7 +81,6 @@ def delete_group(group_id):
         if member_id in db['ledger']:
             del db['ledger'][member_id]
     
-    # Delete the group
     del db['groups'][group_id]
     
     return jsonify({'success': True, 'message': 'Group deleted successfully'})
@@ -100,23 +94,21 @@ def add_member(group_id):
         'id': member_id,
         'group_id': group_id,
         'name': data['name'],
-        'type': data['type'],  # family/couple/single
+        'type': data['type'],  
         'phone': data.get('phone', ''),
         'members_count': data.get('members_count', 1)
     }
     
     db['members'][member_id] = member
     db['groups'][group_id]['members'].append(member_id)
-    
-    # Initialize wallet
+
     db['wallets'][member_id] = {
         'member_id': member_id,
         'balance': 0,
         'total_contributed': 0,
         'total_spent': 0
     }
-    
-    # Initialize ledger
+
     db['ledger'][member_id] = []
     
     return jsonify({'success': True, 'member': member})
@@ -128,8 +120,7 @@ def topup_wallet(member_id):
     
     db['wallets'][member_id]['balance'] += amount
     db['wallets'][member_id]['total_contributed'] += amount
-    
-    # Add to ledger
+  
     transaction = {
         'id': str(uuid.uuid4())[:8],
         'member_id': member_id,
@@ -153,7 +144,7 @@ def smart_split(group_id):
     data = request.json
     total_amount = float(data['amount'])
     description = data['description']
-    split_type = data.get('split_type', 'equal')  # equal/proportional
+    split_type = data.get('split_type', 'equal')  
     
     group = db['groups'][group_id]
     member_ids = group['members']
@@ -161,20 +152,18 @@ def smart_split(group_id):
     if not member_ids:
         return jsonify({'success': False, 'error': 'No members in group'})
     
-    # Calculate split based on type
     splits = {}
     
     if split_type == 'equal':
         per_person = total_amount / len(member_ids)
         for mid in member_ids:
             splits[mid] = per_person
-    else:  # proportional by family size
+    else:  
         total_count = sum(db['members'][mid]['members_count'] for mid in member_ids)
         for mid in member_ids:
             member_count = db['members'][mid]['members_count']
             splits[mid] = (member_count / total_count) * total_amount
     
-    # Process transactions
     results = []
     failed = []
     
@@ -225,7 +214,7 @@ def group_details(group_id):
     for mid in group['members']:
         member = db['members'][mid]
         wallet = db['wallets'][mid]
-        ledger = db['ledger'][mid][-10:]  # Last 10 transactions
+        ledger = db['ledger'][mid][-10:]  
         
         members_data.append({
             'member': member,
@@ -244,36 +233,9 @@ def get_ledger(member_id):
         'ledger': db['ledger'].get(member_id, []),
         'wallet': db['wallets'].get(member_id, {})
     })
+             return "User not found", 404
 
-# @app.route("/sms_webhook", methods=["POST"])
-# def sms_webhook():
-#     sender = request.form.get('From')
-#     message = request.form.get('Body')
 
-#     if not sender or not message:
-#         return "Invalid SMS", 400
-    
-#     if message.startswith("TOPUP"):
-#         try:
-#             amount = float(message.split()[1])
-#         except:
-#             return "Invalid amount format", 400
-
-#         # Find user in DB by phone number
-#         member_id = find_user_by_phone(sender)
-
-#         if not member_id:
-#             send_sms(sender, "Phone number not registered in any group.")
-#             return "User not found", 404
-
-#         save_user(member_id, amount)
-#         send_sms(sender, f"Wallet successfully topped up by ₹{amount}!")
-
-#     return "OK", 200
-# Global wallet balance
-
-# Keep a global dictionary per sender to handle multiple users
-# { phone_number: balance }
 wallets={}
 @app.route("/sms_webhook", methods=["POST"])
 def sms_webhook():
@@ -313,7 +275,7 @@ def sms_webhook():
 
 @app.route("/get_wallet_balance")
 def get_wallet_balance():
-    sender = request.args.get("phone")  # pass ?phone=xxxx
+    sender = request.args.get("phone")  
     if sender in wallets:
         return str(wallets[sender])
     return "0"
