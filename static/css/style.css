@@ -68,7 +68,6 @@ body {
     opacity: 0.9;
 }
 
-/* Dashboard */
 .dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -76,7 +75,6 @@ body {
     animation: fadeIn 0.8s ease;
 }
 
-/* Cards */
 .card {
     background: var(--white);
     border-radius: 15px;
@@ -113,7 +111,7 @@ body {
     padding: 25px;
 }
 
-/* Forms */
+
 .form-group {
     margin-bottom: 20px;
 }
@@ -147,7 +145,6 @@ body {
     box-shadow: 0 0 0 3px rgba(45, 122, 62, 0.1);
 }
 
-/* Buttons */
 .btn {
     padding: 12px 30px;
     border: none;
@@ -187,7 +184,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Groups List */
 .groups-list {
     display: flex;
     flex-direction: column;
@@ -235,7 +231,6 @@ body {
     color: var(--text-light);
 }
 
-/* Delete Button */
 .delete-btn {
     position: absolute;
     top: 15px;
@@ -268,7 +263,6 @@ body {
     transform: scale(0.95) rotate(90deg);
 }
 
-/* Wallet */
 .wallet-balance {
     text-align: center;
     padding: 25px;
@@ -290,7 +284,6 @@ body {
     font-weight: 700;
 }
 
-/* Members List */
 .members-list {
     display: flex;
     flex-direction: column;
@@ -351,7 +344,6 @@ body {
     color: var(--primary);
 }
 
-/* Transactions */
 .transactions {
     margin-top: 15px;
 }
@@ -394,7 +386,6 @@ body {
     color: var(--danger);
 }
 
-/* Split Results */
 .split-results {
     margin-top: 25px;
 }
@@ -418,7 +409,6 @@ body {
     background: #ffebee;
 }
 
-/* Empty State */
 .empty-state {
     text-align: center;
     color: var(--text-light);
@@ -426,7 +416,6 @@ body {
     font-style: italic;
 }
 
-/* Toast */
 .toast {
     position: fixed;
     bottom: 30px;
@@ -457,7 +446,6 @@ body {
     border-left-color: var(--danger);
 }
 
-/* Animations */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -490,7 +478,6 @@ body {
     }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .dashboard {
         grid-template-columns: 1fr;
@@ -511,15 +498,6 @@ body {
     }
 }
 
-/* #smsBox {
-    width: 50%;
-    background: #126f9d;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #126f9d;
-    font-family: Arial;
-    margin-top: 20px;
-} */
  #smsBox {
     max-width: 600px;
     width: 90%;
@@ -568,35 +546,22 @@ body {
     }
 }
 
-/* #topupForm label,
-#topupForm input {
-    color: rgb(0, 0, 0);
-}
-
-#topupForm input::placeholder {
-    color: rgb(0, 0, 0);
-    opacity: 0.7; 
-} */
-
-/* Labels / headings inside topupForm */
 #topupForm label,
 #topupForm h3 {
     color: white;
 }
 
-/* Input text color */
 #topupForm input {
     color: rgb(0, 0, 0);
-    background: #ffffff; /* optional, dark background */
+    background: #ffffff; 
     border: 1px solid #ffffff;
 }
 
-/* Placeholder color */
+
 #topupForm input::placeholder {
-    color: rgba(0, 0, 0, 0.7); /* faded white */
+    color: rgba(0, 0, 0, 0.7); 
 }
 
-/* Optional: input focus style */
 #topupForm input:focus {
     outline: none;
     border-color: #000000;
