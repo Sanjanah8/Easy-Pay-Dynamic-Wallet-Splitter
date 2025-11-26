@@ -107,6 +107,9 @@ Easy Pay Dynamic Wallet Splitter/
   * `"আমার ভাগ কত?"`
 
   The system aims to automatically detect the language and process the command.
+
+  * **AI/ML and OCR Integration**
+    The idea is to reads SMS scans bills for easy splitting
 ---
 ###  **Conclusion**
 
