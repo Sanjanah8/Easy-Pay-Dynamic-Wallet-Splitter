@@ -91,7 +91,7 @@ Easy Pay Dynamic Wallet Splitter/
 
 * **AI/ML and OCR Integration**
     
-  The idea is to reads SMS scans bills for easy splitting
+  The idea is to read SMS and scan bills for easy splitting
 
 * **Multilingual SMS Input Support**
   
